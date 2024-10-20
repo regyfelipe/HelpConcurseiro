@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quest/screens/login/login_screen.dart';
+import 'package:quest/teste.dart';
 import 'screens/register/register_screen.dart';
 import 'services/mongodb_service.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomePageTeste(),
     );
   }
 }

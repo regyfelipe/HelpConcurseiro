@@ -18,16 +18,13 @@ class LoginController {
       return;
     }
 
-    // Tentar autenticar o usuário e obter o objeto User
     User? user = await MongoDBService.authenticateUser(email, password);
 
     if (user != null) {
-      // Navegar para a HomeScreen passando o objeto User
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => HomeScreen(user: user),
       ));
     } else {
-      // Exibir mensagem de erro se a autenticação falhar
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Email ou senha incorretos!')),
       );

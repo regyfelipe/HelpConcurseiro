@@ -26,7 +26,7 @@ class BottomButtons extends StatelessWidget {
               ),
               child: const Text(
                 'Ver questões',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(color: Color(0xFF789DBC), fontSize: 16),
               ),
             ),
           ),

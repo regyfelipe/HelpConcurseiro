@@ -10,16 +10,16 @@ class CustomButton extends StatelessWidget {
     return Expanded(
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          side: BorderSide(color: Colors.white), // White border to match the design
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          side: const BorderSide(color: Colors.white),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8), // Rounded corners
+            borderRadius: BorderRadius.circular(8), 
           ),
         ),
         onPressed: () {},
         child: Text(
           label,
-          style: TextStyle(color: Colors.white, fontSize: 16), // White text color
+          style: TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );

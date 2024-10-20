@@ -15,7 +15,7 @@ class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
-  final RegisterController controller = RegisterController(); // Instância do controlador
+  final RegisterController controller = RegisterController(); 
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class _RegisterFormState extends State<RegisterForm> {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  controller.registerUser(context); // Chama a função do controlador
+                  controller.registerUser(context); 
                 }
               },
               style: ElevatedButton.styleFrom(

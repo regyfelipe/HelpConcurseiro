@@ -9,7 +9,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final LoginController _loginController = LoginController();
-  bool _obscurePassword = true; // Estado para controlar a visibilidade da senha
+  bool _obscurePassword = true; 
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
               const Center(
                 child: Column(
                   children: [
-                    // Logo ou título
                     SizedBox(height: 40),
                     Text(
                       'HelpConcurseiro',
@@ -38,7 +37,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 50),
-              // Campo de entrada de email
               TextFormField(
                 controller: _loginController.emailController,
                 decoration: InputDecoration(
@@ -62,10 +60,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
               const SizedBox(height: 20),
-              // Campo de entrada de senha com o ícone de olho
               TextFormField(
                 controller: _loginController.passwordController,
-                obscureText: _obscurePassword, // Controla a visibilidade da senha
+                obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: 'Senha',
                   prefixIcon: Icon(Icons.lock),
@@ -77,7 +74,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  // Ícone de olho
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscurePassword ? Icons.visibility_off : Icons.visibility,
@@ -117,12 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              // Texto de esquecimento de senha
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    // Lógica para recuperação de senha
                   },
                   child: const Text(
                     'Esqueceu a senha?',
@@ -131,7 +125,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              // Botão de registro
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -7,7 +7,6 @@ import '../../services/mongodb_service.dart';
 import '../../validators/input_validators.dart';
 
 class RegisterController {
-  // Controllers
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController preferredNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -39,10 +38,9 @@ class RegisterController {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Por favor, preencha todos os campos!')),
       );
-      return; // Adicione validação de erro se necessário
+      return;
     }
 
-    // Verifica se o email e o telefone são válidos
     String? emailError = InputValidators.validateEmail(emailController.text);
     String? phoneError = InputValidators.validatePhoneNumber(phoneController.text);
     if (emailError != null) {
@@ -58,7 +56,6 @@ class RegisterController {
       return;
     }
 
-    // Verifica se as senhas coincidem
     if (passwordController.text != confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('As senhas não coincidem!')),
@@ -80,7 +77,6 @@ class RegisterController {
       password: passwordController.text,
     );
 
-    // Tenta inserir o usuário no banco de dados
     bool userExists = await MongoDBService.userExists(emailController.text, phoneController.text);
     if (userExists) {
       ScaffoldMessenger.of(context).showSnackBar(

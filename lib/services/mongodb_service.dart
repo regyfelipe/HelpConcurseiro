@@ -1,5 +1,5 @@
 import 'package:mongo_dart/mongo_dart.dart';
-import '../models/user_model.dart'; // Importando o User model
+import '../models/user_model.dart'; 
 
 class MongoDBService {
   static final Db db = Db(
@@ -10,7 +10,6 @@ class MongoDBService {
 
   static late DbCollection usersCollection;
 
-  // Conecta ao banco de dados
   static Future<void> connect() async {
     try {
       await db.open();
@@ -21,7 +20,6 @@ class MongoDBService {
     }
   }
 
-  // Insere um novo usuário no banco
   static Future<void> insertUser(Map<String, dynamic> user) async {
     try {
       await usersCollection.insert(user);
@@ -31,7 +29,6 @@ class MongoDBService {
     }
   }
 
-  // Verifica se o usuário já existe (email ou telefone duplicado)
   static Future<bool> userExists(String email, String phoneNumber) async {
     try {
       final user = await usersCollection.findOne({
@@ -47,7 +44,6 @@ class MongoDBService {
     }
   }
 
-  // Autentica o usuário e retorna o objeto User se a autenticação for bem-sucedida
   static Future<User?> authenticateUser(String email, String password) async {
     try {
       final userDoc = await usersCollection.findOne(
